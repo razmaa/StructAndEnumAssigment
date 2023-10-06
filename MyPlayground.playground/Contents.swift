@@ -165,14 +165,14 @@ func songsOfOneGenre(songs: [Song], genre: Genre) -> [Song] {
 
 let hipHopSongs = songsOfOneGenre(songs: playlist, genre: .hipHop)
 
-for song in hipHopSongs {
+for var song in hipHopSongs {
     print(song.description)
     
-    //    if let publisher = song.publisher {
-    //        print("Publisher: \(publisher)")
-    //    } else {
-    //        print("No publisher information available.")
-    //    }
+    if let publisher = song.publisher {
+        print("Publisher: \(publisher)")
+    } else {
+        print("No publisher information available.")
+    }
     
     print("---------------------", "\n")
 }
