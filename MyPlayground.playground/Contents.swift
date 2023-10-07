@@ -27,27 +27,27 @@ IsWeekend(day: today)
 // მეორე
 
 enum Weather {
-    case Sunny(Double)
-    case Cloudy(Double)
-    case Rainy(Double)
-    case Snowy(Double)
+    case sunny(Double)
+    case cloudy(Double)
+    case rainy(Double)
+    case snowy(Double)
 }
 
 func whatToWear(weatherToday: Weather) {
     switch weatherToday {
-    case .Cloudy(let temperature):
+    case .cloudy(let temperature):
         print("It is cloudy weather and \(temperature) celsius outside, recommended clothing: jacket and jeans")
-    case .Rainy(let temperature):
+    case .rainy(let temperature):
         print("It is rainy weather and \(temperature) celsius outside, recommended clothing: water-resistant jacket")
-    case .Sunny(let temperature):
+    case .sunny(let temperature):
         print("It is sunny weather and \(temperature) celsius outside, recommended clothing:  shorts and t-shirt")
-    case .Snowy(let temperature):
+    case .snowy(let temperature):
         print("It is snowy weather and \(temperature) celsius outside, recommended clothing: sweaters or hoodies")
     }
     print("\n")
 }
 
-let weatherToday = Weather.Rainy(18.0)
+let weatherToday = Weather.rainy(18.0)
 whatToWear(weatherToday: weatherToday)
 
 // მესამე
@@ -71,8 +71,7 @@ library.append(book3)
 library.append(book4)
 
 func booksPublishedAfter(year: Int, inLibrary library: [Book]) -> [Book] {
-    let filteredBooks = library.filter { $0.publicationYear > year }
-    return filteredBooks
+    library.filter { $0.publicationYear > year }
 }
 
 let yearToFilter = 1965
@@ -109,7 +108,7 @@ struct BankAccount{
             return balance
         } else if maxWithdraw > 0 {
             print("Insufficient amount", "\n")
-            return  0
+            return 0
         } else {
             print("Limit reached, to increase the limit, please contact the bank", "\n")
             return 0
@@ -159,8 +158,7 @@ playlist.append(song4)
 playlist.append(song5)
 
 func songsOfOneGenre(songs: [Song], genre: Genre) -> [Song] {
-    let filteredSongs = songs.filter { $0.genre == genre }
-    return filteredSongs
+    songs.filter { $0.genre == genre }
 }
 
 let hipHopSongs = songsOfOneGenre(songs: playlist, genre: .hipHop)
