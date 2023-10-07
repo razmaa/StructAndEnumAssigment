@@ -76,9 +76,9 @@ func booksPublishedAfter(year: Int, inLibrary library: [Book]) -> [Book] {
 }
 
 let yearToFilter = 1965
-let booksPublishedAfter1950 = booksPublishedAfter(year: yearToFilter, inLibrary: library)
+let booksPublishedAfter1965 = booksPublishedAfter(year: yearToFilter, inLibrary: library)
 
-for book in booksPublishedAfter1950 {
+for book in booksPublishedAfter1965 {
     print("The author of the book \(book.title) is \(book.author), published in \(book.publicationYear)")
     print("---------------------", "\n")
 }
